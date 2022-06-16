@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9279B066-4DE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineWeb", "src\AirlineWeb\AirlineWeb.csproj", "{02D750C0-C261-40B6-A580-149C39B1A10A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineSendAgent", "src\AirlineSendAgent\AirlineSendAgent.csproj", "{6B1845D4-2BDF-435A-B705-1670730C6544}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{02D750C0-C261-40B6-A580-149C39B1A10A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02D750C0-C261-40B6-A580-149C39B1A10A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02D750C0-C261-40B6-A580-149C39B1A10A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B1845D4-2BDF-435A-B705-1670730C6544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B1845D4-2BDF-435A-B705-1670730C6544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B1845D4-2BDF-435A-B705-1670730C6544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B1845D4-2BDF-435A-B705-1670730C6544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{02D750C0-C261-40B6-A580-149C39B1A10A} = {9279B066-4DEC-43EC-B82F-39DD9CEB68A8}
+		{6B1845D4-2BDF-435A-B705-1670730C6544} = {9279B066-4DEC-43EC-B82F-39DD9CEB68A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28005CA3-7B2A-408E-B4A8-232F4B72C195}
