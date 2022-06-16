@@ -10,4 +10,5 @@ public class AirlineDbContext : DbContext
     }
 
     public DbSet<WebhookSubscription> WebhookSubscriptions { get; set; } = default!;
+    public DbSet<FlightDetail> FlightDetails { get; set; } = default!;
 }
