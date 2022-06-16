@@ -1,5 +1,6 @@
 ﻿using AirlineWeb.Data;
 using AirlineWeb.Dtos;
+using AirlineWeb.MessageBus;
 using AirlineWeb.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -55,12 +56,14 @@ public class FlightsController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult> UpdateFlightDetail(int id, FlightDetailUpdateDto request)
+    public async Task<ActionResult> UpdateFlightDetail([FromServices] IMessageBusClient client, int id, FlightDetailUpdateDto request)
     {
         var flight = await _context.FlightDetails.FindAsync(id);
 
         if (flight is  null)
             return NotFound();
+
+        decimal oldPrice = flight.Price;
 
         _mapper.Map(request, flight);
 
@@ -69,6 +72,23 @@ public class FlightsController : ControllerBase
         try
         {
             await _context.SaveChangesAsync();
+
+            if (oldPrice != flight.Price)
+            {
+                Console.WriteLine("Price Changed - Place message on bus");
+
+                var message = new NotificationMessageDto
+                {
+                    WebhookType = "pricechange",
+                    OldPrice = oldPrice,
+                    NewPrice = flight.Price,
+                    FlightCode = flight.FlightCode
+                };
+                client.SendMessage(message);
+            }
+            else
+                Console.WriteLine("No Price change");
+
             return Ok(result);
         }
         catch (Exception ex)
