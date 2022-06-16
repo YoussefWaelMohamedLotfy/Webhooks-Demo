@@ -1,5 +1,6 @@
 using AirlineWeb.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddDbContext<AirlineDbContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("AirlineConnection")));
 
 builder.Services.AddControllers();
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
