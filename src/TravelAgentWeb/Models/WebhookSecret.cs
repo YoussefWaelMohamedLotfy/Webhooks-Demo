@@ -4,7 +4,7 @@ public class WebhookSecret
 {
     public int Id { get; set; }
 
-    public string Secret { get; set; } = default!;
+    public Guid Secret { get; set; }
 
     public string Publisher { get; set; } = default!;
 }
