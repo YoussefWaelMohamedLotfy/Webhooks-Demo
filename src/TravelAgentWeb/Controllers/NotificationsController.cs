@@ -27,17 +27,16 @@ public class NotificationsController : ControllerBase
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Invalid Secret - Ignore Webhook");
-            Console.ResetColor();
-            return Ok();
         }
         else
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Valid Webhook!");
             Console.WriteLine($"Old Price {request.OldPrice}, New Price {request.NewPrice}");
-            Console.ResetColor();
-            return Ok();
         }
+
+        Console.ResetColor();
+        return Ok();
     }
 
 
