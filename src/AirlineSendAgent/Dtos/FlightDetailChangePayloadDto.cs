@@ -1,4 +1,4 @@
-﻿namespace TravelAgentWeb.Dtos;
+﻿namespace AirlineSendAgent.Dtos;
 
 public class FlightDetailChangePayloadDto
 {

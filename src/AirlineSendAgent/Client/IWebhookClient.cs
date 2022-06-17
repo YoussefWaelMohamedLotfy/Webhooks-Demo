@@ -1,4 +1,4 @@
-﻿using TravelAgentWeb.Dtos;
+﻿using AirlineSendAgent.Dtos;
 
 namespace AirlineSendAgent.Client;
 

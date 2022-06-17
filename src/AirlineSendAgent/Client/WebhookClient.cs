@@ -1,6 +1,6 @@
-﻿using System.Net.Http.Headers;
+﻿using AirlineSendAgent.Dtos;
+using System.Net.Http.Headers;
 using System.Text.Json;
-using TravelAgentWeb.Dtos;
 
 namespace AirlineSendAgent.Client;
 
